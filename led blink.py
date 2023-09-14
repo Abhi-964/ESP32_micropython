@@ -8,4 +8,4 @@ while True:
     led_state=not led_state
     led.value(led_state)
     print("LED Turned on" if led_state else "LED turned OFF")
-    sleep(0.01)
+    sleep(0.1)
