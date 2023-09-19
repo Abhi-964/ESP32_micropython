@@ -19,8 +19,8 @@ value = 0
 def toggle_led(p):
     global value
     if value == 0:
-        value = 255
-    elif value == 255:
+        value = 100
+    elif value == 100:
         value = 0
     np[0] = (value,0,0)
     np.write()
