@@ -14,7 +14,7 @@ import sys
 import gc
 import dht
 import urequests
-#import random
+import random
 
 # run garbage collector
 # it is a form of automatic memory management
@@ -28,7 +28,7 @@ led = machine.Pin(2,machine.Pin.OUT)
 # default status of led is OFF
 led.off()
 # DHT 11 sensor object
-d = dht.DHT11(machine.Pin(15))
+#d = dht.DHT11(machine.Pin(15))
 # # DHT 22 Sensor
 # d = dht.DHT22(machine.Pin(15))
 
@@ -67,11 +67,11 @@ while True:
     # wait for the update sensor data using non-blocking delay
     if time.ticks_ms()-last_update > UPDATE_TIME_INTERVAL:
         # measure sensor data
-        d.measure()
-        t = d.temperature()
-        h = d.humidity()
-#       t = random.randint(1,50)
-#       h = random.randint(51,100)
+        #d.measure()
+        #t = d.temperature()
+        #h = d.humidity()
+        t = random.randint(1,50)
+        h = random.randint(51,100)
         # put data into json format
         dht_readings = {'field1':t, 'field2':h}
         # use post method from urequests module to write data on thingspeak
